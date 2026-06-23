@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ahsen Bilal — Software Engineer & Developer</title>
+  <meta name="description" content="Portfolio of Ahsen Bilal — Software Engineer, Frontend Developer, QA Engineer & Data Analyst based in Pakistan." />
+  <meta property="og:title" content="Ahsen Bilal — Portfolio" />
+  <meta property="og:description" content="Software Engineer · Frontend Developer · QA Engineer · Data Analyst" />
+  <meta property="og:type" content="website" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- ══ NAV ════════════════════════════════════════════════════════ -->
+<nav>
+  <a class="nav-logo" href="#" data-page="home">AB<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="#home"     data-page="home">home</a></li>
+    <li><a href="#about"    data-page="about">about</a></li>
+    <li><a href="#projects" data-page="projects">projects</a></li>
+    <li><a href="#contact"  data-page="contact">contact</a></li>
+    <li><a href="assets/Ahsen_Bilal_Rana_CV.pdf" target="_blank" class="nav-cta">resume ↗</a></li>
+  </ul>
+  <div class="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════════════════════════════════ -->
+<!-- PAGE: HOME                                                     -->
+<!-- ══════════════════════════════════════════════════════════════ -->
+<div id="page-home" class="page">
+  <section id="hero">
+    <canvas id="particles-canvas"></canvas>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+
+    <div class="container hero-inner">
+      <p class="hero-eyebrow">Hello, world. I'm</p>
+      <h1 class="hero-name">
+        <span class="first">Ahsen</span>
+        <span class="last">Bilal</span>
+      </h1>
+      <h2 class="hero-tagline">
+        <span class="typed-text"></span><span class="cursor"></span>
+      </h2>
+      <p class="hero-desc">
+        CS student at SZABIST building full-stack products, writing clean tests,
+        and turning raw data into decisions. Based in Wah Cantt, Pakistan.
+        Open to global remote opportunities.
+      </p>
+      <div class="hero-btns">
+        <a href="#projects" data-page="projects" class="btn-primary">View My Work →</a>
+        <a href="#contact"  data-page="contact"  class="btn-ghost">Get In Touch</a>
+      </div>
+    </div>
+
+    <div class="hero-social">
+      <a href="https://linkedin.com/in/ahsen-bilal-362049320" target="_blank" title="LinkedIn">in</a>
+      <a href="https://github.com/ahsenbilal19"               target="_blank" title="GitHub">gh</a>
+      <a href="mailto:ranacnco17@gmail.com"                   title="Email">@</a>
+    </div>
+    <div class="hero-scroll">scroll down</div>
+  </section>
+
+  <!-- Quick Stats -->
+  <section class="section-pad" style="padding-top:2rem; padding-bottom: 4rem;">
+    <div class="container">
+      <div style="display:grid; grid-template-columns: repeat(4,1fr); gap:1rem;" class="reveal">
+        <div class="card" style="text-align:center; padding:1.5rem 1rem;">
+          <div style="font-family:var(--font-head);font-size:2rem;font-weight:700;color:var(--accent2);">3+</div>
+          <div style="font-size:0.78rem;color:var(--text-dim);font-family:var(--font-mono);margin-top:0.3rem;">Internships</div>
+        </div>
+        <div class="card" style="text-align:center; padding:1.5rem 1rem;">
+          <div style="font-family:var(--font-head);font-size:2rem;font-weight:700;color:var(--accent2);">6+</div>
+          <div style="font-size:0.78rem;color:var(--text-dim);font-family:var(--font-mono);margin-top:0.3rem;">Projects Built</div>
+        </div>
+        <div class="card" style="text-align:center; padding:1.5rem 1rem;">
+          <div style="font-family:var(--font-head);font-size:2rem;font-weight:700;color:var(--accent2);">15+</div>
+          <div style="font-size:0.78rem;color:var(--text-dim);font-family:var(--font-mono);margin-top:0.3rem;">Tech Skills</div>
+        </div>
+        <div class="card" style="text-align:center; padding:1.5rem 1rem;">
+          <div style="font-family:var(--font-head);font-size:2rem;font-weight:700;color:var(--accent2);">4yr</div>
+          <div style="font-size:0.78rem;color:var(--text-dim);font-family:var(--font-mono);margin-top:0.3rem;">Freelancing</div>
+        </div>
+      </div>
+
+      <!-- What I Do -->
+      <div style="margin-top:4rem;">
+        <div class="section-label reveal">What I Do</div>
+        <h2 class="section-title reveal">Building across the <span>full stack</span></h2>
+        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap:1rem; margin-top:2rem;">
+          <div class="card reveal">
+            <div style="font-size:1.8rem;margin-bottom:1rem;">⚛️</div>
+            <h3 style="font-family:var(--font-head);font-size:1rem;font-weight:600;margin-bottom:0.5rem;">Frontend Engineering</h3>
+            <p style="font-size:0.85rem;color:var(--text-muted);line-height:1.7;">React.js, Next.js, Tailwind CSS — pixel-perfect, responsive, performant UIs.</p>
+          </div>
+          <div class="card reveal">
+            <div style="font-size:1.8rem;margin-bottom:1rem;">🔧</div>
+            <h3 style="font-family:var(--font-head);font-size:1rem;font-weight:600;margin-bottom:0.5rem;">Backend & Databases</h3>
+            <p style="font-size:0.85rem;color:var(--text-muted);line-height:1.7;">Node.js, Express.js, MySQL, MongoDB, Firebase — scalable APIs and data layers.</p>
+          </div>
+          <div class="card reveal">
+            <div style="font-size:1.8rem;margin-bottom:1rem;">🧪</div>
+            <h3 style="font-family:var(--font-head);font-size:1rem;font-weight:600;margin-bottom:0.5rem;">QA & Testing</h3>
+            <p style="font-size:0.85rem;color:var(--text-muted);line-height:1.7;">Manual testing, Cypress, Selenium, Postman — shipping code that actually works.</p>
+          </div>
+          <div class="card reveal">
+            <div style="font-size:1.8rem;margin-bottom:1rem;">📊</div>
+            <h3 style="font-family:var(--font-head);font-size:1rem;font-weight:600;margin-bottom:0.5rem;">Data Analytics</h3>
+            <p style="font-size:0.85rem;color:var(--text-muted);line-height:1.7;">Power BI, Tableau, Python (Pandas) — turning raw data into clear decisions.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA strip -->
+      <div class="reveal" style="margin-top:4rem; padding:2.5rem; background:linear-gradient(135deg,var(--bg3),var(--navy)); border:1px solid var(--border2); border-radius:var(--radius-lg); display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1.5rem;">
+        <div>
+          <h3 style="font-family:var(--font-head);font-size:1.3rem;font-weight:600;margin-bottom:0.4rem;">Open to remote opportunities</h3>
+          <p style="font-size:0.88rem;color:var(--text-muted);">Actively looking for internships, freelance work, and full-time roles globally.</p>
+        </div>
+        <a href="#contact" data-page="contact" class="btn-primary">Let's Talk →</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Designed & Built by <span>Ahsen Bilal</span> · 2025</p>
+  </footer>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════════ -->
+<!-- PAGE: ABOUT                                                    -->
+<!-- ══════════════════════════════════════════════════════════════ -->
+<div id="page-about" class="page">
+  <div style="height:68px;"></div>
+
+  <section class="section-pad">
+    <div class="container">
+      <div class="section-label reveal">About Me</div>
+      <div class="about-grid">
+
+        <!-- Avatar + Stats -->
+        <div class="reveal">
+          <div class="about-avatar-wrap">
+            <div class="about-avatar" id="about-avatar">
+              <!-- Replace the emoji below with: <img src="../assets/photo.jpg" alt="Ahsen Bilal"> -->
+              👨‍💻
+            </div>
+          </div>
+          <div class="about-stats" style="margin-top:1.5rem;">
+            <div class="stat-box"><div class="stat-num">3+</div><div class="stat-lbl">Internships</div></div>
+            <div class="stat-box"><div class="stat-num">6+</div><div class="stat-lbl">Projects</div></div>
+            <div class="stat-box"><div class="stat-num">2023</div><div class="stat-lbl">SZABIST CS</div></div>
+            <div class="stat-box"><div class="stat-num">4yr</div><div class="stat-lbl">Freelancing</div></div>
+          </div>
+        </div>
+
+        <!-- Bio -->
+        <div class="about-text reveal">
+          <h2 class="section-title" style="margin-bottom:1.25rem;">The person <span>behind the code</span></h2>
+          <p>I'm a Computer Science student at SZABIST Islamabad — a multi-domain builder who works comfortably across the entire product lifecycle: designing UIs, building APIs, writing tests, and extracting insights from data.</p>
+          <p>Over three internships and four years of freelancing, I've worked with real clients, shipped real products, and learned how to stay calm when production breaks. I believe great software is equal parts engineering and empathy.</p>
+          <p>When I'm not coding, I'm competing in programming contests, editing gaming videos, or drawing up design concepts. I'm actively seeking global remote opportunities.</p>
+
+          <div style="display:flex;gap:1rem;margin:1.75rem 0;flex-wrap:wrap;">
+            <a href="assets/Ahsen_Bilal_Resume.pdf" target="_blank" class="btn-primary" style="font-size:0.78rem;">↓ Download CV</a>
+            <a href="#contact" data-page="contact" class="btn-ghost" style="font-size:0.78rem;">Contact Me</a>
+          </div>
+
+          <!-- Skills -->
+          <div class="section-label" style="margin-top:2rem;">Technical Skills</div>
+          <div class="skills-grid">
+            <div class="skill-cat">
+              <div class="skill-cat-name">Languages</div>
+              <div class="skill-cat-items">JS (ES6+), Python, PHP, C++, SQL</div>
+            </div>
+            <div class="skill-cat">
+              <div class="skill-cat-name">Frontend</div>
+              <div class="skill-cat-items">React.js, Next.js, Tailwind CSS, Figma</div>
+            </div>
+            <div class="skill-cat">
+              <div class="skill-cat-name">Backend & DB</div>
+              <div class="skill-cat-items">Node.js, Express.js, MySQL, MongoDB, Firebase</div>
+            </div>
+            <div class="skill-cat">
+              <div class="skill-cat-name">QA & Testing</div>
+              <div class="skill-cat-items">Cypress, Selenium, Postman, Manual Testing</div>
+            </div>
+            <div class="skill-cat">
+              <div class="skill-cat-name">Data & BI</div>
+              <div class="skill-cat-items">Power BI, Tableau, Pandas, Jupyter, SQL</div>
+            </div>
+            <div class="skill-cat">
+              <div class="skill-cat-name">Dev Tools</div>
+              <div class="skill-cat-items">Git, GitHub, Linux, VS Code, Agile/Scrum</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Timeline -->
+  <section class="section-pad" style="padding-top:0; background: linear-gradient(to bottom, transparent, var(--bg2), transparent);">
+    <div class="container">
+      <div class="section-label reveal">Experience</div>
+      <h2 class="section-title reveal" style="margin-bottom:2.5rem;">Work <span>History</span></h2>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-date">Jul 2025 – Sep 2025</div>
+          <div class="timeline-role">Web Developer Intern</div>
+          <div class="timeline-company">DeveloperHub.co · Remote</div>
+          <ul class="timeline-desc">
+            <li>Built responsive pages with HTML5, CSS3, JS, Tailwind CSS, and PHP.</li>
+            <li>Performed manual testing and authored structured test cases before releases.</li>
+            <li>Collaborated in Agile sprint cycles and code reviews.</li>
+          </ul>
+          <div class="tags" style="margin-top:0.75rem;">
+            <span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">JavaScript</span>
+            <span class="tag">PHP</span><span class="tag">Tailwind</span><span class="tag">Manual Testing</span>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">May 2025 – Jul 2025</div>
+          <div class="timeline-role">Frontend Developer Intern</div>
+          <div class="timeline-company">YoungDev Interns · Remote</div>
+          <ul class="timeline-desc">
+            <li>Engineered reusable React.js components with Tailwind CSS.</li>
+            <li>Validated REST APIs with Postman; integrated Firebase real-time data.</li>
+            <li>Improved cross-device responsiveness across desktop and mobile.</li>
+          </ul>
+          <div class="tags" style="margin-top:0.75rem;">
+            <span class="tag">React.js</span><span class="tag">Tailwind</span>
+            <span class="tag">Firebase</span><span class="tag">Postman</span><span class="tag">REST APIs</span>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">Jun 2025 – Aug 2025</div>
+          <div class="timeline-role">Data Analyst Intern</div>
+          <div class="timeline-company">AnalytiXCamp · Remote</div>
+          <ul class="timeline-desc">
+            <li>Executed EDA using Python (Pandas, NumPy) and Jupyter Notebook.</li>
+            <li>Built Power BI and Tableau dashboards to visualize business KPIs.</li>
+            <li>Queried and managed relational data with MySQL and SQL.</li>
+          </ul>
+          <div class="tags" style="margin-top:0.75rem;">
+            <span class="tag">Python</span><span class="tag">Pandas</span>
+            <span class="tag">Power BI</span><span class="tag">Tableau</span><span class="tag">MySQL</span>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">2022 – Present</div>
+          <div class="timeline-role">Freelance Designer & Video Editor</div>
+          <div class="timeline-company">Self-Employed · Pakistan</div>
+          <ul class="timeline-desc">
+            <li>Designed brand logos and visual identities for multiple clients.</li>
+            <li>Produced gaming and content videos via Premiere Pro and CapCut.</li>
+            <li>Managed client data and reporting with Excel and Google Sheets.</li>
+          </ul>
+          <div class="tags" style="margin-top:0.75rem;">
+            <span class="tag">Figma</span><span class="tag">Canva</span>
+            <span class="tag">Premiere Pro</span><span class="tag">CapCut</span><span class="tag">Excel</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section class="section-pad" style="padding-top:0;">
+    <div class="container">
+      <div class="section-label reveal">Education</div>
+      <h2 class="section-title reveal" style="margin-bottom:2rem;">Academic <span>Background</span></h2>
+      <div style="display:flex;flex-direction:column;gap:1rem;">
+        <div class="card reveal" style="display:flex;align-items:center;gap:1.5rem;padding:1.25rem 1.5rem;">
+          <div style="font-size:2rem;flex-shrink:0;">🎓</div>
+          <div>
+            <div style="font-family:var(--font-head);font-size:1rem;font-weight:600;">BS Computer Science</div>
+            <div style="font-size:0.85rem;color:var(--accent2);margin:0.2rem 0;">SZABIST — Islamabad, Pakistan</div>
+            <div style="font-family:var(--font-mono);font-size:0.72rem;color:var(--text-dim);">2023 – Present</div>
+          </div>
+        </div>
+        <div class="card reveal" style="display:flex;align-items:center;gap:1.5rem;padding:1.25rem 1.5rem;">
+          <div style="font-size:2rem;flex-shrink:0;">📚</div>
+          <div>
+            <div style="font-family:var(--font-head);font-size:1rem;font-weight:600;">Intermediate — Pre-Engineering / Science</div>
+            <div style="font-size:0.85rem;color:var(--accent2);margin:0.2rem 0;">Scholars Science College — Wah Cantt, Rawalpindi</div>
+            <div style="font-family:var(--font-mono);font-size:0.72rem;color:var(--text-dim);">2020 – 2022</div>
+          </div>
+        </div>
+        <div class="card reveal" style="display:flex;align-items:center;gap:1.5rem;padding:1.25rem 1.5rem;">
+          <div style="font-size:2rem;flex-shrink:0;">🏫</div>
+          <div>
+            <div style="font-family:var(--font-head);font-size:1rem;font-weight:600;">Matriculation — Science</div>
+            <div style="font-size:0.85rem;color:var(--accent2);margin:0.2rem 0;">Heavy Industries Taxila Education City — Taxila, Rawalpindi</div>
+            <div style="font-family:var(--font-mono);font-size:0.72rem;color:var(--text-dim);">2018 – 2020</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Designed & Built by <span>Ahsen Bilal</span> · 2025</p>
+  </footer>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════════ -->
+<!-- PAGE: PROJECTS                                                 -->
+<!-- ══════════════════════════════════════════════════════════════ -->
+<div id="page-projects" class="page">
+  <div style="height:68px;"></div>
+  <section class="section-pad">
+    <div class="container">
+      <div class="section-label reveal">My Work</div>
+      <h2 class="section-title reveal">Selected <span>Projects</span></h2>
+      <p class="section-sub reveal" style="margin-bottom:3rem;">A showcase of what I've built — from full-stack platforms to data dashboards.</p>
+
+      <!-- FYP — Featured -->
+      <div class="reveal" style="margin-bottom:2rem;">
+        <div class="project-card" style="display:grid;grid-template-columns:1fr 1fr;overflow:hidden;" id="fyp-card">
+          <div class="project-img" style="height:100%;min-height:260px;">
+            <!-- To add image: replace the emoji div with:
+                 <div class="project-img has-image" style="height:100%;min-height:260px;">
+                   <img src="assets/smart-rental.jpg" alt="Smart Rental Platform">
+                 </div> -->
+            🏠
+            <span class="project-badge">FYP</span>
+          </div>
+          <div class="project-body" style="padding:2rem;">
+            <div style="font-family:var(--font-mono);font-size:0.68rem;color:var(--accent);letter-spacing:0.1em;margin-bottom:0.5rem;">FEATURED PROJECT</div>
+            <h3 style="font-size:1.3rem;margin-bottom:0.75rem;">Smart Rental Platform</h3>
+            <p>Full-stack rental marketplace with multi-category listings, secure authentication, owner/renter roles, booking management, user reviews, and trust score monitoring. Smart recommendation engine improves item discovery and engagement.</p>
+            <div class="tags">
+              <span class="tag">React.js</span><span class="tag">Node.js</span>
+              <span class="tag">Express.js</span><span class="tag">MySQL</span><span class="tag">Sequelize</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="proj-link">⭐ Final Year Project</a>
+              <a href="https://github.com/ahsenbilal19" target="_blank" class="proj-link">↗ GitHub</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Grid Projects -->
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.25rem;">
+
+        <div class="project-card reveal">
+          <div class="project-img">🎵</div>
+          <div class="project-body">
+            <h3>Music Player Application</h3>
+            <p>Full-featured music player with playback controls, playlist management, and an intuitive interface. Core functionality validated with structured test cases.</p>
+            <div class="tags">
+              <span class="tag">React.js</span><span class="tag">JavaScript</span><span class="tag">CSS3</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/ahsenbilal19" target="_blank" class="proj-link">↗ GitHub</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-img">🍽️</div>
+          <div class="project-body">
+            <h3>Food Store Database System</h3>
+            <p>Relational database with normalized schema for inventory tracking, order management, and automated reporting for a food retail use-case.</p>
+            <div class="tags">
+              <span class="tag">MySQL</span><span class="tag">SQL</span><span class="tag">Database Design</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/ahsenbilal19" target="_blank" class="proj-link">↗ GitHub</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-img">🛒</div>
+          <div class="project-body">
+            <h3>eCommerce Storefront</h3>
+            <p>Complete Shopify store with product management, order tracking, and integrated social media marketing campaigns to grow brand engagement.</p>
+            <div class="tags">
+              <span class="tag">Shopify</span><span class="tag">JavaScript</span><span class="tag">Social Media</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="proj-link">↗ Live Store</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-img">📊</div>
+          <div class="project-body">
+            <h3>Analytics Dashboard</h3>
+            <p>Interactive Power BI and Tableau dashboards visualizing sales KPIs, using Python (Pandas) for data preparation and SQL for MySQL extraction.</p>
+            <div class="tags">
+              <span class="tag">Power BI</span><span class="tag">Tableau</span>
+              <span class="tag">Python</span><span class="tag">SQL</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/ahsenbilal19" target="_blank" class="proj-link">↗ GitHub</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-img">🎨</div>
+          <div class="project-body">
+            <h3>Freelance Logo Design Portfolio</h3>
+            <p>Custom brand identities for multiple clients, establishing consistent visual language across digital and social media channels.</p>
+            <div class="tags">
+              <span class="tag">Figma</span><span class="tag">Canva</span><span class="tag">Brand Design</span>
+            </div>
+            <div class="project-links">
+              <a href="#contact" data-page="contact" class="proj-link">→ Request Work</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Designed & Built by <span>Ahsen Bilal</span> · 2025</p>
+  </footer>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════════ -->
+<!-- PAGE: CONTACT                                                  -->
+<!-- ══════════════════════════════════════════════════════════════ -->
+<div id="page-contact" class="page">
+  <div style="height:68px;"></div>
+  <section class="section-pad">
+    <div class="container">
+      <div class="section-label reveal">Get In Touch</div>
+      <h2 class="section-title reveal">Let's <span>Work Together</span></h2>
+      <p class="section-sub reveal" style="margin-bottom:3rem;">
+        Open to remote internships, freelance projects, and full-time roles globally.
+        Drop a message and I'll get back within 24 hours.
+      </p>
+
+      <div class="contact-grid">
+        <!-- Info -->
+        <div class="reveal">
+          <div class="contact-item copy-email" style="cursor:pointer;" title="Click to copy email">
+            <div class="contact-icon">✉️</div>
+            <div>
+              <div class="contact-label">EMAIL</div>
+              <div class="contact-val">ranacnco17@gmail.com</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <div>
+              <div class="contact-label">LOCATION</div>
+              <div class="contact-val">Wah Cantt, Rawalpindi, Pakistan</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">📞</div>
+            <div>
+              <div class="contact-label">PHONE</div>
+              <div class="contact-val">+92 348 3904362</div>
+            </div>
+          </div>
+          <a href="https://linkedin.com/in/ahsen-bilal-362049320" target="_blank" class="contact-item" style="display:flex;text-decoration:none;">
+            <div class="contact-icon">in</div>
+            <div>
+              <div class="contact-label">LINKEDIN</div>
+              <div class="contact-val">ahsen-bilal-362049320</div>
+            </div>
+          </a>
+          <a href="https://github.com/ahsenbilal19" target="_blank" class="contact-item" style="display:flex;text-decoration:none;">
+            <div class="contact-icon">⌥</div>
+            <div>
+              <div class="contact-label">GITHUB</div>
+              <div class="contact-val">ahsenbilal19</div>
+            </div>
+          </a>
+
+          <div style="margin-top:2rem;padding:1.25rem;background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius);">
+            <div style="font-family:var(--font-mono);font-size:0.72rem;color:var(--accent);margin-bottom:0.5rem;">AVAILABILITY</div>
+            <div style="font-size:0.9rem;color:var(--text-muted);">🟢 Open to opportunities — Remote globally, On-site in Pakistan</div>
+          </div>
+        </div>
+
+        <!-- Form -->
+        <div class="reveal">
+          <form id="contact-form">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+              <div class="form-group">
+                <label for="cf-name">NAME *</label>
+                <input type="text" id="cf-name" placeholder="Your name" required />
+              </div>
+              <div class="form-group">
+                <label for="cf-email">EMAIL *</label>
+                <input type="email" id="cf-email" placeholder="your@email.com" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="cf-subject">SUBJECT</label>
+              <input type="text" id="cf-subject" placeholder="What's this about?" />
+            </div>
+            <div class="form-group">
+              <label for="cf-message">MESSAGE *</label>
+              <textarea id="cf-message" rows="6" placeholder="Tell me about your project or opportunity..." required></textarea>
+            </div>
+            <button type="submit" class="btn-primary" style="width:100%;justify-content:center;">Send Message →</button>
+            <div id="form-status" class="form-status"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Designed & Built by <span>Ahsen Bilal</span> · 2025</p>
+  </footer>
+</div>
+
+<!-- FYP card responsive fix -->
+<style>
+  @media (max-width: 700px) {
+    #fyp-card { grid-template-columns: 1fr !important; }
+    #fyp-card .project-img { min-height: 180px !important; height: 180px !important; }
+  }
+</style>
+
+<script src="js/main.js"></script>
+</body>
+</html>
