@@ -167,16 +167,36 @@ function initTimeline() {
 }
 
 // ── CONTACT FORM ──────────────────────────────────────────────────
-document.getElementById('contact-form')?.addEventListener('submit', function(e) {
+// ── CONTACT FORM ──────────────────────────────────────────────────
+document.getElementById('contact-form')?.addEventListener('submit', async function(e) {
   e.preventDefault();
   const name    = document.getElementById('cf-name')?.value.trim();
   const email   = document.getElementById('cf-email')?.value.trim();
-  const subject = document.getElementById('cf-subject')?.value.trim();
   const msg     = document.getElementById('cf-msg')?.value.trim();
   if (!name || !email || !msg) { showStatus('error', '⚠ Please fill all required fields.'); return; }
-  window.location.href = `mailto:ranacnco17@gmail.com?subject=${encodeURIComponent(subject || 'Portfolio: ' + name)}&body=${encodeURIComponent('From: ' + name + ' <' + email + '>\n\n' + msg)}`;
-  showStatus('success', '✓ Opening your email client...');
-  this.reset();
+
+  const btn = this.querySelector('button[type="submit"]');
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+
+  try {
+    const res = await fetch('https://formspree.io/f/mzdlganq', {
+      method: 'POST',
+      body: new FormData(this),
+      headers: { 'Accept': 'application/json' }
+    });
+    if (res.ok) {
+      showStatus('success', '✓ Message sent! I\'ll reply within 24 hours.');
+      this.reset();
+    } else {
+      showStatus('error', '⚠ Something went wrong. Please email me directly.');
+    }
+  } catch {
+    showStatus('error', '⚠ Network error. Please try again.');
+  }
+
+  btn.textContent = 'Send Message →';
+  btn.disabled = false;
 });
 
 function showStatus(type, msg) {

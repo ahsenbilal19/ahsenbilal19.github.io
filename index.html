@@ -209,9 +209,7 @@
       <div class="about-grid">
         <div class="about-left reveal">
           <div class="avatar">
-            <!-- Add photo: remove emoji, uncomment below -->
-            <!-- <img src="assets/photo.jpg" alt="Ahsen Bilal"> -->
-            👨‍💻
+            <img src="assets/DP-2.0.jpeg" alt="Ahsen Bilal">
           </div>
           <div class="about-stats">
             <div class="as-item"><div class="as-num">3+</div><div class="as-lbl">Internships</div></div>
@@ -435,11 +433,11 @@
           <div class="form-box">
             <form id="contact-form">
               <div class="form-row">
-                <div class="f-group"><label class="f-lbl" for="cf-name">NAME *</label><input class="f-inp" id="cf-name" type="text" placeholder="Your name" required/></div>
-                <div class="f-group"><label class="f-lbl" for="cf-email">EMAIL *</label><input class="f-inp" id="cf-email" type="email" placeholder="your@email.com" required/></div>
+                <div class="f-group"><label class="f-lbl" for="cf-name">NAME *</label><input class="f-inp" id="cf-name" name="name" type="text" placeholder="Your name" required/></div>
+                <div class="f-group"><label class="f-lbl" for="cf-email">EMAIL *</label><input class="f-inp" id="cf-email" name="email" type="email" placeholder="your@email.com" required/></div>
               </div>
-              <div class="f-group"><label class="f-lbl" for="cf-subject">SUBJECT</label><input class="f-inp" id="cf-subject" type="text" placeholder="What's this about?"/></div>
-              <div class="f-group"><label class="f-lbl" for="cf-msg">MESSAGE *</label><textarea class="f-txt" id="cf-msg" rows="6" placeholder="Tell me about your project or opportunity..." required></textarea></div>
+              <div class="f-group"><label class="f-lbl" for="cf-subject">SUBJECT</label><input class="f-inp" id="cf-subject" name="subject" type="text" placeholder="What's this about?"/></div>
+              <div class="f-group"><label class="f-lbl" for="cf-msg">MESSAGE *</label><textarea class="f-txt" id="cf-msg" name="message" rows="6" placeholder="Tell me about your project or opportunity..." required></textarea></div>
               <button type="submit" class="btn-primary" style="width:100%;justify-content:center">Send Message →</button>
               <div id="form-status"></div>
             </form>
