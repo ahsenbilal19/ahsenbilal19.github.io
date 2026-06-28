@@ -9,16 +9,14 @@ function showPage(id) {
   const link = document.querySelector(`.nav-links a[data-page="${id}"]`);
   if (link) link.classList.add('active');
   document.getElementById('nav-links')?.classList.remove('open');
-  if (id === 'home') setTimeout(initParticles, 60);
+  if (id === 'home') { setTimeout(initParticles, 60); setTimeout(animateCounters, 800); }
   setTimeout(() => { initReveal(); initTimeline(); }, 120);
 }
 
-// Attach all [data-page] clicks
 document.addEventListener('click', e => {
   const el = e.target.closest('[data-page]');
   if (!el) return;
   const href = el.getAttribute('href');
-  // Let external/pdf links work normally
   if (href && (href.startsWith('http') || href.endsWith('.pdf'))) return;
   e.preventDefault();
   const t = el.getAttribute('data-page');
@@ -32,7 +30,7 @@ showPage(location.hash.replace('#', '') || 'home');
 
 // ── NAV SCROLL ────────────────────────────────────────────────────
 window.addEventListener('scroll', () => {
-  document.getElementById('navbar')?.classList.toggle('scrolled', window.scrollY > 30);
+  document.getElementById('navbar')?.classList.toggle('scrolled', window.scrollY > 40);
 }, { passive: true });
 
 // ── HAMBURGER ─────────────────────────────────────────────────────
@@ -56,32 +54,24 @@ function initParticles() {
   resize();
   window.addEventListener('resize', resize, { passive: true });
 
-  const COLS = ['rgba(59,130,246,', 'rgba(96,165,250,', 'rgba(30,58,95,', 'rgba(147,197,253,'];
+  const COLS = ['rgba(59,130,246,','rgba(96,165,250,','rgba(0,212,255,','rgba(147,197,253,'];
 
   class P {
-    constructor(rand) { this.reset(rand) }
+    constructor(rand) { this.reset(rand); }
     reset(rand) {
       this.x  = Math.random() * W;
       this.y  = rand ? Math.random() * H : H + 8;
-      this.vx = (Math.random() - .5) * .38;
-      this.vy = -(Math.random() * .42 + .14);
-      this.r  = Math.random() * 1.5 + .3;
-      this.a  = Math.random() * .45 + .07;
+      this.vx = (Math.random() - .5) * .35;
+      this.vy = -(Math.random() * .4 + .12);
+      this.r  = Math.random() * 1.4 + .25;
+      this.a  = Math.random() * .4 + .06;
       this.c  = COLS[Math.floor(Math.random() * COLS.length)];
     }
-    step() {
-      this.x += this.vx; this.y += this.vy;
-      if (this.y < -8) this.reset(false);
-    }
-    draw() {
-      ctx.beginPath();
-      ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
-      ctx.fillStyle = this.c + this.a + ')';
-      ctx.fill();
-    }
+    step() { this.x += this.vx; this.y += this.vy; if (this.y < -8) this.reset(false); }
+    draw() { ctx.beginPath(); ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2); ctx.fillStyle = this.c + this.a + ')'; ctx.fill(); }
   }
 
-  const n = Math.min(90, Math.floor(W * H / 10000));
+  const n = Math.min(80, Math.floor(W * H / 11000));
   const pts = Array.from({ length: n }, (_, i) => new P(i < n * .65));
 
   let mx = -9999, my = -9999;
@@ -91,31 +81,21 @@ function initParticles() {
   }, { passive: true });
   canvas.addEventListener('mouseleave', () => { mx = -9999; my = -9999; });
 
-  function lines() {
+  function drawLines() {
     for (let i = 0; i < pts.length; i++) {
-      // particle-particle
       for (let j = i + 1; j < pts.length; j++) {
         const dx = pts[i].x - pts[j].x, dy = pts[i].y - pts[j].y;
         const d = Math.sqrt(dx*dx + dy*dy);
-        if (d < 100) {
-          ctx.beginPath();
-          ctx.moveTo(pts[i].x, pts[i].y);
-          ctx.lineTo(pts[j].x, pts[j].y);
-          ctx.strokeStyle = `rgba(59,130,246,${.05*(1-d/100)})`;
-          ctx.lineWidth = .4;
-          ctx.stroke();
+        if (d < 95) {
+          ctx.beginPath(); ctx.moveTo(pts[i].x, pts[i].y); ctx.lineTo(pts[j].x, pts[j].y);
+          ctx.strokeStyle = `rgba(59,130,246,${.045*(1-d/95)})`; ctx.lineWidth = .4; ctx.stroke();
         }
       }
-      // mouse lines
       const mdx = pts[i].x - mx, mdy = pts[i].y - my;
-      const md  = Math.sqrt(mdx*mdx + mdy*mdy);
-      if (md < 130) {
-        ctx.beginPath();
-        ctx.moveTo(pts[i].x, pts[i].y);
-        ctx.lineTo(mx, my);
-        ctx.strokeStyle = `rgba(96,165,250,${.13*(1-md/130)})`;
-        ctx.lineWidth = .55;
-        ctx.stroke();
+      const md = Math.sqrt(mdx*mdx + mdy*mdy);
+      if (md < 120) {
+        ctx.beginPath(); ctx.moveTo(pts[i].x, pts[i].y); ctx.lineTo(mx, my);
+        ctx.strokeStyle = `rgba(0,212,255,${.12*(1-md/120)})`; ctx.lineWidth = .55; ctx.stroke();
       }
     }
   }
@@ -123,7 +103,7 @@ function initParticles() {
   function loop() {
     ctx.clearRect(0, 0, W, H);
     pts.forEach(p => { p.step(); p.draw(); });
-    lines();
+    drawLines();
     pRAF = requestAnimationFrame(loop);
   }
   loop();
@@ -147,16 +127,28 @@ function typeLoop() {
 }
 setTimeout(typeLoop, 1600);
 
+// ── COUNTER ANIMATION ─────────────────────────────────────────────
+function animateCounters() {
+  document.querySelectorAll('.stat-num[data-count]').forEach(el => {
+    const target = parseInt(el.getAttribute('data-count'));
+    const suffix = el.closest('.stat-item')?.querySelector('.stat-lbl')?.textContent.includes('Skills') ? '+' : '+';
+    let current = 0;
+    const step = Math.ceil(target / 40);
+    const timer = setInterval(() => {
+      current = Math.min(current + step, target);
+      el.textContent = current + (target >= 10 ? '+' : '+');
+      if (current >= target) clearInterval(timer);
+    }, 40);
+  });
+}
+
 // ── SCROLL REVEAL ─────────────────────────────────────────────────
 function initReveal() {
   const els = document.querySelectorAll('.reveal:not(.visible)');
   if (!els.length) return;
   const obs = new IntersectionObserver(entries => {
     entries.forEach((e, i) => {
-      if (e.isIntersecting) {
-        setTimeout(() => e.target.classList.add('visible'), i * 65);
-        obs.unobserve(e.target);
-      }
+      if (e.isIntersecting) { setTimeout(() => e.target.classList.add('visible'), i * 65); obs.unobserve(e.target); }
     });
   }, { threshold: .1, rootMargin: '0px 0px -30px 0px' });
   els.forEach(el => obs.observe(el));
@@ -168,10 +160,7 @@ function initTimeline() {
   if (!items.length) return;
   const obs = new IntersectionObserver(entries => {
     entries.forEach((e, i) => {
-      if (e.isIntersecting) {
-        setTimeout(() => e.target.classList.add('visible'), i * 120);
-        obs.unobserve(e.target);
-      }
+      if (e.isIntersecting) { setTimeout(() => e.target.classList.add('visible'), i * 120); obs.unobserve(e.target); }
     });
   }, { threshold: .08 });
   items.forEach(el => obs.observe(el));
@@ -185,8 +174,7 @@ document.getElementById('contact-form')?.addEventListener('submit', function(e) 
   const subject = document.getElementById('cf-subject')?.value.trim();
   const msg     = document.getElementById('cf-msg')?.value.trim();
   if (!name || !email || !msg) { showStatus('error', '⚠ Please fill all required fields.'); return; }
-  const body = `From: ${name} <${email}>\n\n${msg}`;
-  window.location.href = `mailto:ranacnco17@gmail.com?subject=${encodeURIComponent(subject || 'Portfolio Contact: ' + name)}&body=${encodeURIComponent(body)}`;
+  window.location.href = `mailto:ranacnco17@gmail.com?subject=${encodeURIComponent(subject || 'Portfolio: ' + name)}&body=${encodeURIComponent('From: ' + name + ' <' + email + '>\n\n' + msg)}`;
   showStatus('success', '✓ Opening your email client...');
   this.reset();
 });
@@ -194,9 +182,7 @@ document.getElementById('contact-form')?.addEventListener('submit', function(e) 
 function showStatus(type, msg) {
   const el = document.getElementById('form-status');
   if (!el) return;
-  el.className = type;
-  el.textContent = msg;
-  el.style.display = 'block';
+  el.className = type; el.textContent = msg; el.style.display = 'block';
   setTimeout(() => { el.style.display = 'none'; }, 5000);
 }
 
@@ -206,4 +192,15 @@ document.querySelector('.copy-email')?.addEventListener('click', () => {
     const v = document.getElementById('email-val');
     if (v) { v.textContent = '✓ Copied!'; setTimeout(() => v.textContent = 'ranacnco17@gmail.com', 2000); }
   }).catch(() => {});
+});
+
+// ── BEAM MOUSE PARALLAX ───────────────────────────────────────────
+document.addEventListener('mousemove', e => {
+  const beam = document.querySelector('.hero-beam');
+  const glow = document.querySelector('.hero-glow');
+  if (!beam && !glow) return;
+  const x = (e.clientX / window.innerWidth - .5) * 20;
+  const y = (e.clientY / window.innerHeight - .5) * 10;
+  if (beam) beam.style.transform = `translate(${x * .3}px, ${y * .3}px)`;
+  if (glow) glow.style.transform = `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`;
 });

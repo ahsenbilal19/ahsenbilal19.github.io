@@ -28,71 +28,101 @@
 ════════════════════════════ -->
 <div id="page-home" class="page">
 
-  <!-- HERO -->
+  <!-- HERO — premium dark with beam -->
   <section id="hero">
     <canvas id="particles-canvas"></canvas>
-    <div class="orb orb1"></div>
-    <div class="orb orb2"></div>
 
-    <div class="hero-container">
-      <!-- LEFT -->
-      <div class="hero-left">
-        <p class="hero-eyebrow">Hello, world — I'm</p>
-        <h1 class="hero-name">
-          <span class="name-first">Ahsen</span>
-          <span class="name-last" data-text="Bilal">Bilal</span>
-        </h1>
-        <p class="hero-tagline">
-          <span class="typed-text"></span><span class="cursor"></span>
-        </p>
-        <p class="hero-desc">
-          CS student at SZABIST building full-stack products, shipping clean tests,
-          and turning raw data into clear decisions — open to
-          <strong>global remote opportunities</strong>.
-        </p>
-        <div class="hero-btns">
-          <a data-page="projects" class="btn-primary">View My Work →</a>
-          <a data-page="contact"  class="btn-ghost">Get In Touch</a>
-        </div>
-        <div class="hero-socials">
-          <a href="https://linkedin.com/in/ahsen-bilal-362049320" target="_blank" class="hsocial">in</a>
-          <a href="https://github.com/ahsenbilal19"               target="_blank" class="hsocial">gh</a>
-          <a href="mailto:ranacnco17@gmail.com"                                   class="hsocial">@</a>
-          <a href="assets/Ahsen_Bilal_Resume.pdf"                 target="_blank" class="hsocial">cv</a>
-        </div>
+    <!-- SVG beam / light ray like the reference image -->
+    <svg class="hero-beam" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <!-- left curve -->
+      <path d="M720,420 Q400,300 80,520" stroke="url(#beamL)" stroke-width="1.5" fill="none" opacity="0.6"/>
+      <path d="M720,420 Q380,280 20,480" stroke="url(#beamL)" stroke-width="0.8" fill="none" opacity="0.35"/>
+      <!-- right curve -->
+      <path d="M720,420 Q1040,300 1360,520" stroke="url(#beamR)" stroke-width="1.5" fill="none" opacity="0.6"/>
+      <path d="M720,420 Q1060,280 1420,480" stroke="url(#beamR)" stroke-width="0.8" fill="none" opacity="0.35"/>
+      <!-- vertical beam down -->
+      <path d="M720,420 L720,900" stroke="url(#beamV)" stroke-width="1.2" fill="none" opacity="0.5"/>
+      <path d="M715,420 L700,900" stroke="url(#beamV)" stroke-width="0.5" fill="none" opacity="0.2"/>
+      <path d="M725,420 L740,900" stroke="url(#beamV)" stroke-width="0.5" fill="none" opacity="0.2"/>
+      <!-- center glow spot -->
+      <circle cx="720" cy="420" r="3" fill="#3B82F6" opacity="0.9"/>
+      <circle cx="720" cy="420" r="12" fill="url(#spotGlow)" opacity="0.6"/>
+      <defs>
+        <linearGradient id="beamL" x1="720" y1="420" x2="80" y2="520" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stop-color="#3B82F6" stop-opacity="1"/>
+          <stop offset="100%" stop-color="#3B82F6" stop-opacity="0"/>
+        </linearGradient>
+        <linearGradient id="beamR" x1="720" y1="420" x2="1360" y2="520" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stop-color="#3B82F6" stop-opacity="1"/>
+          <stop offset="100%" stop-color="#3B82F6" stop-opacity="0"/>
+        </linearGradient>
+        <linearGradient id="beamV" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#3B82F6" stop-opacity="0.8"/>
+          <stop offset="100%" stop-color="#3B82F6" stop-opacity="0"/>
+        </linearGradient>
+        <radialGradient id="spotGlow" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#60A5FA" stop-opacity="1"/>
+          <stop offset="100%" stop-color="#3B82F6" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+    </svg>
+
+    <!-- center glow blob -->
+    <div class="hero-glow"></div>
+
+    <!-- Main content -->
+    <div class="hero-content">
+
+      <!-- Welcome pill -->
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        WELCOME TO MY PORTFOLIO
       </div>
 
-      <!-- RIGHT: code card -->
-      <div class="hero-right">
-        <div class="code-card">
-          <div class="code-card-bar">
-            <span class="cc-dot red"></span>
-            <span class="cc-dot yellow"></span>
-            <span class="cc-dot green"></span>
-            <span class="cc-filename">ahsen.js</span>
-          </div>
-          <div class="code-body">
-            <div><span class="c-dim">// </span><span class="c-dim">Engineer · Tester · Analyst</span></div>
-            <div><span class="c-purple">const</span> <span class="c-blue">dev</span> <span class="c-dim">= {</span></div>
-            <div class="c-line"><span class="c-green">name</span><span class="c-dim">:</span> <span class="c-yellow">"Ahsen Bilal"</span><span class="c-dim">,</span></div>
-            <div class="c-line"><span class="c-green">stack</span><span class="c-dim">: [</span><span class="c-orange">"React"</span><span class="c-dim">, </span><span class="c-orange">"Node"</span><span class="c-dim">],</span></div>
-            <div class="c-line"><span class="c-green">qa</span><span class="c-dim">:</span> <span class="c-orange">"Cypress + Selenium"</span><span class="c-dim">,</span></div>
-            <div class="c-line"><span class="c-green">data</span><span class="c-dim">:</span> <span class="c-orange">"Power BI + Python"</span><span class="c-dim">,</span></div>
-            <div class="c-line"><span class="c-green">open</span><span class="c-dim">:</span> <span class="c-red">true</span></div>
-            <div><span class="c-dim">};</span></div>
-          </div>
-          <div class="code-stats">
-            <div class="cs-item"><div class="cs-num">3+</div><div class="cs-lbl">Internships</div></div>
-            <div class="cs-item"><div class="cs-num">6+</div><div class="cs-lbl">Projects</div></div>
-            <div class="cs-item"><div class="cs-num">4yr</div><div class="cs-lbl">Freelance</div></div>
-          </div>
-        </div>
+      <!-- Name -->
+      <h1 class="hero-headline">
+        <span class="hl-greeting">I'm</span>
+        <span class="hl-name">Ahsen Bilal</span>
+      </h1>
+
+      <!-- Typed roles -->
+      <p class="hero-sub">
+        <span class="hero-sub-prefix">A </span><span class="typed-text"></span><span class="cursor"></span>
+      </p>
+
+      <p class="hero-desc">
+        Building full-stack products · shipping clean tests · turning raw data into decisions.
+        <span class="hero-loc">📍 Wah Cantt, Pakistan — open to global remote opportunities</span>
+      </p>
+
+      <div class="hero-btns">
+        <a data-page="projects" class="btn-primary">Explore My Work →</a>
+        <a data-page="contact"  class="btn-ghost">Get In Touch</a>
       </div>
     </div>
 
+    <!-- floating tech pills -->
+    <div class="tech-pill tp1">React.js</div>
+    <div class="tech-pill tp2">Node.js</div>
+    <div class="tech-pill tp3">Python</div>
+    <div class="tech-pill tp4">Power BI</div>
+    <div class="tech-pill tp5">Cypress</div>
+    <div class="tech-pill tp6">MySQL</div>
+
+    <!-- socials left -->
+    <div class="hero-socials">
+      <a href="https://linkedin.com/in/ahsen-bilal-362049320" target="_blank" class="hsocial" title="LinkedIn">in</a>
+      <a href="https://github.com/ahsenbilal19"               target="_blank" class="hsocial" title="GitHub">gh</a>
+      <a href="mailto:ranacnco17@gmail.com"                                   class="hsocial" title="Email">@</a>
+      <a href="assets/Ahsen_Bilal_Resume.pdf"                 target="_blank" class="hsocial" title="CV">cv</a>
+      <div class="hsocial-line"></div>
+    </div>
+
+    <!-- scroll right -->
     <div class="scroll-hint">
       <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
       <span>SCROLL</span>
+      <div class="hsocial-line"></div>
     </div>
   </section>
 
@@ -100,10 +130,10 @@
   <div class="stats-strip">
     <div class="container">
       <div class="stats-row">
-        <div class="stat-item"><div class="stat-num">3+</div><div class="stat-lbl">Internships</div></div>
-        <div class="stat-item"><div class="stat-num">6+</div><div class="stat-lbl">Projects Built</div></div>
-        <div class="stat-item"><div class="stat-num">15+</div><div class="stat-lbl">Tech Skills</div></div>
-        <div class="stat-item"><div class="stat-num">4yr</div><div class="stat-lbl">Freelancing</div></div>
+        <div class="stat-item"><div class="stat-num" data-count="3">0</div><div class="stat-lbl">Internships</div></div>
+        <div class="stat-item"><div class="stat-num" data-count="6">0</div><div class="stat-lbl">Projects Built</div></div>
+        <div class="stat-item"><div class="stat-num" data-count="15">0</div><div class="stat-lbl">Tech Skills</div></div>
+        <div class="stat-item"><div class="stat-num" data-count="4">0</div><div class="stat-lbl">Years Freelancing</div></div>
       </div>
     </div>
   </div>
@@ -113,34 +143,42 @@
     <div class="container">
       <div class="sec-label reveal">What I Do</div>
       <h2 class="sec-title reveal">Building across the <span>full stack</span></h2>
-      <p class="sec-sub reveal">From pixel-perfect UIs to robust APIs, test suites to analytics dashboards — I cover the full product lifecycle.</p>
+      <p class="sec-sub reveal">From pixel-perfect UIs to robust APIs, structured QA to analytics dashboards — I cover the full product lifecycle.</p>
       <div class="services-grid">
         <div class="svc-card reveal">
+          <div class="svc-num">01</div>
           <div class="svc-icon">⚛️</div>
           <h3>Frontend Engineering</h3>
-          <p>React.js, Next.js, Tailwind CSS — responsive, performant, pixel-perfect interfaces.</p>
+          <p>React.js, Next.js, Tailwind CSS — responsive, performant, pixel-perfect interfaces that feel great on every screen.</p>
+          <div class="svc-tags"><span>React</span><span>Next.js</span><span>Tailwind</span></div>
         </div>
         <div class="svc-card reveal">
+          <div class="svc-num">02</div>
           <div class="svc-icon">🔧</div>
           <h3>Backend & Databases</h3>
-          <p>Node.js, Express.js, MySQL, MongoDB, Firebase — scalable APIs and clean data layers.</p>
+          <p>Node.js, Express.js, MySQL, MongoDB, Firebase — scalable APIs and clean data architectures built for production.</p>
+          <div class="svc-tags"><span>Node.js</span><span>MySQL</span><span>MongoDB</span></div>
         </div>
         <div class="svc-card reveal">
+          <div class="svc-num">03</div>
           <div class="svc-icon">🧪</div>
           <h3>QA & Testing</h3>
-          <p>Cypress, Selenium, Postman, manual testing — shipping code that actually works.</p>
+          <p>Cypress, Selenium, Postman, manual testing — shipping code that actually works, every single time, no exceptions.</p>
+          <div class="svc-tags"><span>Cypress</span><span>Selenium</span><span>Postman</span></div>
         </div>
         <div class="svc-card reveal">
+          <div class="svc-num">04</div>
           <div class="svc-icon">📊</div>
           <h3>Data Analytics</h3>
-          <p>Power BI, Tableau, Python (Pandas) — raw data into clear, actionable decisions.</p>
+          <p>Power BI, Tableau, Python (Pandas) — transforming raw data into visualizations that drive real business decisions.</p>
+          <div class="svc-tags"><span>Power BI</span><span>Tableau</span><span>Python</span></div>
         </div>
       </div>
 
       <div class="cta-band reveal">
         <div>
           <h3>Open to remote opportunities globally 🌍</h3>
-          <p>Actively seeking internships, freelance projects, and full-time roles.</p>
+          <p>Actively seeking internships, freelance projects, and full-time roles. Let's build something great together.</p>
         </div>
         <a data-page="contact" class="btn-primary">Start a Conversation →</a>
       </div>
@@ -149,7 +187,7 @@
 
   <footer>
     <div class="ft-brand">AB<span>.</span></div>
-    <p class="ft-copy">© 2025 Ahsen Bilal · HTML · CSS · Vanilla JS</p>
+    <p class="ft-copy">© 2025 Ahsen Bilal · Crafted with HTML · CSS · JS</p>
     <div class="ft-links">
       <a href="https://linkedin.com/in/ahsen-bilal-362049320" target="_blank" class="ft-link">in</a>
       <a href="https://github.com/ahsenbilal19"               target="_blank" class="ft-link">gh</a>
@@ -169,16 +207,16 @@
       <h2 class="sec-title reveal">The person <span>behind the code</span></h2>
 
       <div class="about-grid">
-        <!-- Avatar -->
         <div class="about-left reveal">
           <div class="avatar">
-            <!-- Add photo: <img src="assets/photo.jpg" alt="Ahsen Bilal"> -->
+            <!-- Add photo: remove emoji, uncomment below -->
+            <!-- <img src="assets/photo.jpg" alt="Ahsen Bilal"> -->
             👨‍💻
           </div>
           <div class="about-stats">
             <div class="as-item"><div class="as-num">3+</div><div class="as-lbl">Internships</div></div>
             <div class="as-item"><div class="as-num">6+</div><div class="as-lbl">Projects</div></div>
-            <div class="as-item"><div class="as-num">2023</div><div class="as-lbl">SZABIST</div></div>
+            <div class="as-item"><div class="as-num">2023</div><div class="as-lbl">SZABIST CS</div></div>
             <div class="as-item"><div class="as-num">4yr</div><div class="as-lbl">Freelance</div></div>
           </div>
           <div class="about-cta-btns">
@@ -187,11 +225,10 @@
           </div>
         </div>
 
-        <!-- Bio -->
         <div class="about-right reveal">
           <p>I'm a Computer Science student at SZABIST Islamabad — a multi-domain builder working across the full product lifecycle: designing UIs, building APIs, writing tests, and extracting insights from data.</p>
           <p>Across three internships and four years of freelancing, I've shipped real products, worked with real clients, and learned how to stay calm when production breaks. I believe great software is equal parts engineering discipline and user empathy.</p>
-          <p>When I'm not coding, I'm competing in programming contests, editing videos, or thinking through design concepts. Actively seeking global remote opportunities.</p>
+          <p>When I'm not coding, I'm competing in programming contests, editing gaming videos, or thinking through design concepts. Actively seeking global remote opportunities where I can grow fast and contribute meaningfully.</p>
 
           <div class="sec-label" style="margin-top:2rem">Technical Skills</div>
           <div class="skills-grid">
@@ -273,15 +310,7 @@
       </div>
     </div>
   </section>
-  <footer>
-    <div class="ft-brand">AB<span>.</span></div>
-    <p class="ft-copy">© 2025 Ahsen Bilal</p>
-    <div class="ft-links">
-      <a href="https://linkedin.com/in/ahsen-bilal-362049320" target="_blank" class="ft-link">in</a>
-      <a href="https://github.com/ahsenbilal19"               target="_blank" class="ft-link">gh</a>
-      <a href="mailto:ranacnco17@gmail.com"                                   class="ft-link">@</a>
-    </div>
-  </footer>
+  <footer><div class="ft-brand">AB<span>.</span></div><p class="ft-copy">© 2025 Ahsen Bilal</p><div class="ft-links"><a href="https://linkedin.com/in/ahsen-bilal-362049320" target="_blank" class="ft-link">in</a><a href="https://github.com/ahsenbilal19" target="_blank" class="ft-link">gh</a><a href="mailto:ranacnco17@gmail.com" class="ft-link">@</a></div></footer>
 </div>
 
 <!-- ═══════════════════════════
@@ -295,17 +324,14 @@
       <h2 class="sec-title reveal">Selected <span>Projects</span></h2>
       <p class="sec-sub reveal" style="margin-bottom:3rem">A showcase of what I've built — from full-stack platforms to analytics dashboards.</p>
 
-      <!-- FYP Featured -->
       <div class="feat-card reveal">
         <div class="feat-img">🏠<span class="feat-badge">FYP</span></div>
         <div class="feat-body">
           <div class="feat-eyebrow">FEATURED · FINAL YEAR PROJECT</div>
           <h3>Smart Rental Platform</h3>
           <p>Full-stack rental marketplace with multi-category listings, secure JWT authentication, and owner/renter role management. Includes booking management, user reviews, and trust score monitoring.</p>
-          <p style="margin-top:0.5rem">Smart recommendation engine and featured listing system improve item discovery and user engagement.</p>
-          <div class="tags">
-            <span class="tag">React.js</span><span class="tag">Node.js</span><span class="tag">Express.js</span><span class="tag">MySQL</span><span class="tag">Sequelize</span><span class="tag">JWT</span>
-          </div>
+          <p style="margin-top:.6rem">Smart recommendation engine and featured listing system improve item discovery and user engagement at scale.</p>
+          <div class="tags"><span class="tag">React.js</span><span class="tag">Node.js</span><span class="tag">Express.js</span><span class="tag">MySQL</span><span class="tag">Sequelize</span><span class="tag">JWT</span></div>
           <div class="feat-links">
             <a href="https://github.com/ahsenbilal19" target="_blank" class="plink">↗ GitHub Repo</a>
             <a href="#" class="plink">🌐 Live Demo</a>
@@ -313,13 +339,12 @@
         </div>
       </div>
 
-      <!-- Grid -->
       <div class="proj-grid">
         <div class="proj-card reveal">
           <div class="proj-img">🎵</div>
           <div class="proj-body">
             <h3>Music Player App</h3>
-            <p>Full-featured player with playback controls and playlist management. Core functionality validated with structured test cases.</p>
+            <p>Full-featured player with playback controls and playlist management. Core validated with structured test cases.</p>
             <div class="tags"><span class="tag">React.js</span><span class="tag">JavaScript</span><span class="tag">CSS3</span></div>
             <div class="proj-links"><a href="https://github.com/ahsenbilal19" target="_blank" class="plink">↗ GitHub</a></div>
           </div>
@@ -328,7 +353,7 @@
           <div class="proj-img">🍽️</div>
           <div class="proj-body">
             <h3>Food Store Database</h3>
-            <p>Relational database with normalized schema for inventory tracking, order records, and automated reporting.</p>
+            <p>Relational database with normalized schema for inventory tracking, orders, and automated reporting.</p>
             <div class="tags"><span class="tag">MySQL</span><span class="tag">SQL</span><span class="tag">DB Design</span></div>
             <div class="proj-links"><a href="https://github.com/ahsenbilal19" target="_blank" class="plink">↗ GitHub</a></div>
           </div>
@@ -363,15 +388,7 @@
       </div>
     </div>
   </section>
-  <footer>
-    <div class="ft-brand">AB<span>.</span></div>
-    <p class="ft-copy">© 2025 Ahsen Bilal</p>
-    <div class="ft-links">
-      <a href="https://linkedin.com/in/ahsen-bilal-362049320" target="_blank" class="ft-link">in</a>
-      <a href="https://github.com/ahsenbilal19"               target="_blank" class="ft-link">gh</a>
-      <a href="mailto:ranacnco17@gmail.com"                                   class="ft-link">@</a>
-    </div>
-  </footer>
+  <footer><div class="ft-brand">AB<span>.</span></div><p class="ft-copy">© 2025 Ahsen Bilal</p><div class="ft-links"><a href="https://linkedin.com/in/ahsen-bilal-362049320" target="_blank" class="ft-link">in</a><a href="https://github.com/ahsenbilal19" target="_blank" class="ft-link">gh</a><a href="mailto:ranacnco17@gmail.com" class="ft-link">@</a></div></footer>
 </div>
 
 <!-- ═══════════════════════════
@@ -383,14 +400,13 @@
     <div class="container">
       <div class="sec-label reveal">Get In Touch</div>
       <h2 class="sec-title reveal">Let's <span>Work Together</span></h2>
-      <p class="sec-sub reveal" style="margin-bottom:3rem">Open to remote internships, freelance, and full-time roles globally. I'll reply within 24 hours.</p>
+      <p class="sec-sub reveal" style="margin-bottom:3rem">Open to remote internships, freelance, and full-time roles globally. I reply within 24 hours.</p>
 
       <div class="contact-grid">
         <div class="reveal">
           <h3 class="contact-hello">Say hello 👋</h3>
           <p class="contact-sub">Whether it's a project, job offer, or just a question — I'd love to hear from you.</p>
-
-          <div class="c-item copy-email" title="Click to copy email">
+          <div class="c-item copy-email" title="Click to copy">
             <div class="c-icon">✉️</div>
             <div><div class="c-lbl">EMAIL — click to copy</div><div class="c-val" id="email-val">ranacnco17@gmail.com</div></div>
           </div>
@@ -415,7 +431,6 @@
             <div class="avail-txt">🟢 Open remotely worldwide · On-site available in Pakistan</div>
           </div>
         </div>
-
         <div class="reveal">
           <div class="form-box">
             <form id="contact-form">
@@ -433,15 +448,7 @@
       </div>
     </div>
   </section>
-  <footer>
-    <div class="ft-brand">AB<span>.</span></div>
-    <p class="ft-copy">© 2025 Ahsen Bilal</p>
-    <div class="ft-links">
-      <a href="https://linkedin.com/in/ahsen-bilal-362049320" target="_blank" class="ft-link">in</a>
-      <a href="https://github.com/ahsenbilal19"               target="_blank" class="ft-link">gh</a>
-      <a href="mailto:ranacnco17@gmail.com"                                   class="ft-link">@</a>
-    </div>
-  </footer>
+  <footer><div class="ft-brand">AB<span>.</span></div><p class="ft-copy">© 2025 Ahsen Bilal</p><div class="ft-links"><a href="https://linkedin.com/in/ahsen-bilal-362049320" target="_blank" class="ft-link">in</a><a href="https://github.com/ahsenbilal19" target="_blank" class="ft-link">gh</a><a href="mailto:ranacnco17@gmail.com" class="ft-link">@</a></div></footer>
 </div>
 
 <script src="js/main.js"></script>
