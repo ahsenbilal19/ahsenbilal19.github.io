@@ -110,7 +110,7 @@ function initParticles() {
 }
 
 // ── TYPING EFFECT ─────────────────────────────────────────────────
-const ROLES = ['Software Engineer','Frontend Developer','QA Engineer','Data Analyst','Full-Stack Builder'];
+const ROLES = ['Software Engineer','Full-Stack Developer','QA Engineer','Data Analyst','Front-End Developer','Back-End Developer','UI/UX Designer'];
 let ri = 0, ci = 0, del = false;
 function typeLoop() {
   const el = document.querySelector('.typed-text');
